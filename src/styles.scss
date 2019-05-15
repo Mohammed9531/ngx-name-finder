@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+$fa-font-path : '../node_modules/font-awesome/fonts';
+
+@import '~bootstrap/scss/bootstrap';
+@import "material/material-finder-theme";
+@import '../node_modules/font-awesome/scss/font-awesome';
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+html,body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.bg-white {
+    .finder-layout-container {
+        background-color: #fff !important;
+    }
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+legend {
+    width: auto !important;
+    border: none;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+fieldset {
+    border: solid 1px #DDD !important;
+    padding: 15px;
+    border-bottom: none;
+}
+
+button {
+    border-radius: 0 !important;
+}

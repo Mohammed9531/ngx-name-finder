@@ -1,0 +1,29 @@
+.container {
+    background: #fff;
+    padding-top: 45px;
+
+    .img-wrapper {
+        text-align: center;
+        .img-responsive {
+            text-align: center;
+
+            > img {
+                width: 90%;
+                height: 90%;
+            }
+        }
+    }
+
+    .action-button {
+        margin: 25px 0;
+        text-align: center;
+    }
+}
+
+.finder-home-container {
+    margin-bottom: 100px;
+}
+
+:host .mat-sidenav-container {
+    background-color: #fff !important;
+}

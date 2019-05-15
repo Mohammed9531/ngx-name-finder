@@ -1,0 +1,23 @@
+.finder-main-container {
+    .finder-footer {
+        background: #dbdbde;
+        color: #3f51b5;
+        padding: 15px 0;
+        text-align: center;
+        position: sticky;
+        width: 100%;
+        bottom: 0;
+        z-index: 99;
+        font-size: 12px;
+
+        .finder-heart {
+            color: red;
+        }
+
+        .finder-footer-note {
+            * {
+                font-size: 9px;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<div class="finder-main-container" [ngClass]="dynamicClassName">
+    <finder-header>
+        <finder-spinner></finder-spinner>
+        <router-outlet></router-outlet>
+    </finder-header>
+    <footer class="finder-footer">
+        &lt;/&gt; with <span class="finder-heart">&#x2764;</span> by Shoukath Mohammed
+        <div class="finder-footer-note">
+            <span>© Copyright 1999 - {{ currentYear }}</span>
+            <span *ngIf="buildInfo">- Version: {{ buildInfo.version }} | Build: {{ buildInfo.build }} | Generated On: {{ buildInfo.generatedOn }}</span>
+        </div>
+    </footer>
+</div>

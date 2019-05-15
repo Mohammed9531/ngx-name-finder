@@ -1,0 +1,15 @@
+
+<!-- Navbar starts here -->
+<div class="finder-layout-container">
+  <mat-toolbar color="primary">
+    <div class="finder-brand">
+      <a [routerLink]="['/home']">
+        <div>Name Finder</div>
+      </a>
+    </div>
+    <span class="finder-header-fill-spaces"></span>
+  </mat-toolbar>
+  <div class="finder-layout-content-wrapper">
+    <ng-content></ng-content>
+  </div>
+</div>

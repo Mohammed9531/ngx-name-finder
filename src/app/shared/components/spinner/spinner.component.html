@@ -1,0 +1,9 @@
+<div class="finder-spinner finder-spinner-backdrop" *ngIf="display"
+[ngClass]="{'white-backdrop': config.backdrop == 'white', 'black-backdrop': config.backdrop != 'white'}">
+    <div class="finder-spinner-wrapper">
+        <div class="finder-spinner-container">
+            <img class="finder-spinner-img" [src]="config.imageSource"/>
+            <div class="finder-spinner-text bold black f18">{{config.spinnerText}}</div>
+        </div>
+    </div>
+</div>
