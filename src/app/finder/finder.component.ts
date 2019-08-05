@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { STEP_ONE, STEP_TWO } from './../shared/constants/steps.constants';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 /**
  * @constant
