@@ -1,10 +1,34 @@
-<div class="container finder-home-container">
-    <div class="row">
+<div class="container finder-container">
+    <div class="row justify-content-center">
         <div class="col-md-3"></div>
         <div class="col-md-6 img-wrapper">
-            <div class="img-responsive">
-                <img src="./assets/images/gcloud.png" alt="GCLOUD">
-            </div>
+                <mat-card class="finder-card mat-card">
+                    <div class="finder-rules">
+                        <h1 class="finder-rules-header">How to play name finder?</h1>
+                        <ul class="finder-rules-list">
+                        <li class="finder-rule">
+                            <span class="badge badge-info finder-badge">Step-1</span>Please think of a name of person. It can be either a first
+                            name or the last name. Please note that the name finder is
+                            entirely based on alphabets/characters, no special characters
+                            would be guessed.
+                        </li>
+                        <li class="finder-rule">
+                            <span class="badge badge-info finder-badge">Step-2</span>Alright, now don't reveal the name to anyone, keep it to
+                            yourself.
+                        </li>
+                        <li class="finder-rule">
+                            <span class="badge badge-info finder-badge">Step-3</span>In the below given alphabetical grid, please select the
+                            column that holds the alphabet in sequence. For instance, say
+                            'Harry' be the name you chose. Select the line that contains the
+                            letter 'H' then repeat this step for all the subsequent letters
+                            'A, R, R, Y'.
+                        </li>
+                        <li class="finder-rule">
+                            <span class="badge badge-info finder-badge">Step-4</span>When finish, we will guess the name of the person.
+                        </li>
+                        </ul>
+                    </div>
+                </mat-card>
             <div class="action-button">
                 <button mat-raised-button color="primary" type="submit" class="bcc-btn" (click)="goTo('finder')">
                     <span mat-line>Get Started</span>

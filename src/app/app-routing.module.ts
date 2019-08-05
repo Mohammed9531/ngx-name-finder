@@ -29,10 +29,7 @@ const ROUTES: Routes = [
   },
   {
     path: 'finder',
-    component: FinderComponent,
-    data: {
-      bgClass: 'bg-white'
-    }
+    component: FinderComponent
   }
 ];
 
@@ -46,7 +43,7 @@ const ROUTES: Routes = [
     , CommonModule
     , MaterialModule
     , HttpClientModule
-    , RouterModule.forRoot(ROUTES, {useHash: true})
+    , RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   exports: [RouterModule]
 })

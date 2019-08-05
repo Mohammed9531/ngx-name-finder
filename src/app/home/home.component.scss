@@ -1,29 +1,33 @@
-.container {
-    background: #fff;
-    padding-top: 45px;
-
-    .img-wrapper {
-        text-align: center;
-        .img-responsive {
-            text-align: center;
-
-            > img {
-                width: 90%;
-                height: 90%;
-            }
-        }
-    }
-
+.finder-container {
     .action-button {
         margin: 25px 0;
         text-align: center;
     }
-}
+    .finder-card {
+        margin: 25px;
+        overflow: hidden;
+        border-radius: 0;
 
-.finder-home-container {
-    margin-bottom: 100px;
-}
+        .finder-btn {
+            border-radius: 0;
+            outline: 0;
+        }
+    }
+    .finder-rules {
+        padding: 25px;
+        text-align: center;
+        .finder-rules-list {
+            padding-left: 5px;
+            text-align: justify;
 
-:host .mat-sidenav-container {
-    background-color: #fff !important;
+            .finder-badge {
+                border-radius: 0;
+                margin-right: 10px;
+            }
+
+            .finder-rule {
+                padding: 10px 0;
+            }
+        }
+    }
 }

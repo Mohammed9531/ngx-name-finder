@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/modules/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FinderHttpModule } from './shared/modules/finder-http/finder-http.module';
@@ -27,9 +28,11 @@ import { SpinnerComponent } from './shared/components/spinner/spinner.component'
   ],
   imports: [
     NgbModule
+    , FormsModule
     , BrowserModule
     , MaterialModule
     , AppRoutingModule
+    , ReactiveFormsModule
     , BrowserAnimationsModule
     , FinderHttpModule.forRoot()
   ],
