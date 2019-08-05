@@ -4,7 +4,8 @@
 
          <!-- Result Block -->
         <mat-card class="finder-card mat-card" *ngIf="steps?.result">
-          Result: {{steps.result}}
+            Result: {{steps.result}}
+            | <button class="btn btn-link" (click)="resetFinder()">Reset</button>
         </mat-card>
 
         <!-- Step-1 Block -->

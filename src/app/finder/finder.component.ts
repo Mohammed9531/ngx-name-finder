@@ -4,6 +4,18 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { STEP_ONE, STEP_TWO } from './../shared/constants/steps.constants';
 
 /**
+ * @constant
+ */
+const defaults: any = {
+  count: 0,
+  result: '',
+  stepOne: [],
+  stepTwo: [],
+  activeStep: 1,
+  totalLength: 0
+};
+
+/**
  * @author: Shoukath Mohammed
  */
 @Component({
@@ -16,14 +28,7 @@ export class FinderComponent implements OnInit {
    * @public
    * @type: any
    */
-  public steps: any = {
-    count: 0,
-    result: '',
-    stepOne: [],
-    stepTwo: [],
-    activeStep: 1,
-    totalLength: 0
-  };
+  public steps: any;
 
   /**
    * @public
@@ -52,7 +57,7 @@ export class FinderComponent implements OnInit {
    * @description: N/A
    */
   public ngOnInit(): void {
-    this.finderSteps = STEP_ONE;
+    this.steps = _.extend({}, defaults);
     this.buildForm();
   }
 
@@ -73,6 +78,7 @@ export class FinderComponent implements OnInit {
         this.finderSteps = STEP_TWO;
       } else {
         this.getResult();
+        this.steps.activeStep = 0;
       }
     }
   }
@@ -96,7 +102,6 @@ export class FinderComponent implements OnInit {
         }
       }
     }
-
     this.steps.result = arr.join('');
   }
 
@@ -124,6 +129,18 @@ export class FinderComponent implements OnInit {
 
   /**
    * @public
+   * @returns: void
+   * @description: a helper method that
+   * resets the finder.
+   */
+  public resetFinder(): void {
+    this.finderSteps = null;
+    this.nameFinderForm.reset();
+    this.steps = _.extend({}, defaults);
+  }
+
+  /**
+   * @public
    * @param: {e<MouseEvent>}
    * @return: void
    * @description: a helper method that
@@ -132,6 +149,7 @@ export class FinderComponent implements OnInit {
   public onSubmit(e: any): void {
     if (this.nameFinderForm.valid) {
       this.steps.activeStep += 1;
+      this.finderSteps = STEP_ONE;
       this.steps.totalLength = +this.nameFinderForm.get('count').value;
     }
   }
