@@ -1,96 +1,45 @@
 <div class="finder-container container">
   <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-      <form [formGroup]="">
-        <div class="form-group">
-            <label for="">Total Alphabets/Characters:</label>
-            <input type="text" class="form-control" />
-        </div>
-        <div class="form-group">
-          <button
-            mat-raised-button
-            color="primary"
-            type="submit"
-            class="finder-btn"
-          >
-            <span mat-line>Submit</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <mat-card class="finder-card mat-card">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" [ngSwitch]="steps?.activeStep">
+
+         <!-- Result Block -->
+        <mat-card class="finder-card mat-card" *ngIf="steps?.result">
+          Result: {{steps.result}}
+        </mat-card>
+
+        <!-- Step-1 Block -->
+        <mat-card class="finder-card mat-card" *ngSwitchCase="1">
+          <h6>Step {{steps.activeStep}}:</h6>
+          <form [formGroup]="nameFinderForm" (ngSubmit)="onSubmit($event)">
+            <div class="form-group">
+                <label for="finderCount">Total Alphabets/Characters:</label>
+                <input id="finderCount" type="text" class="form-control finder-control" formControlName="count" />
+            </div>
+            <div class="form-group">
+              <button class="btn btn-danger btn-block finder-btn"> Submit </button>
+            </div>
+          </form>
+        </mat-card>
+
+        <!-- Step-2 Block -->
+        <mat-card class="finder-card mat-card" *ngSwitchCase="2">
+          <h6>Step {{steps.activeStep}}:</h6>
           <div class="finder-rules">
-           <button class="btn btn-danger btn-block finder-btn" *ngFor="let step of finderSteps; let i = index" (click)="setGroupData(step, i)">
-            <!-- <span class="badge badge-light finder-badge">{{'Group ' + (i + 1)}}:</span> -->
+           <button class="btn btn-danger btn-block finder-btn" *ngFor="let step of finderSteps; let i = index" (click)="setGroupData(step, 'stepOne')">
             <span>{{ getLetters(step.group) }}</span>
            </button>
+          </div>
+        </mat-card>
+
+        <!-- Step-3 Block -->
+        <mat-card class="finder-card mat-card" *ngSwitchCase="3">
+          <h6>Step {{steps.activeStep}}:</h6>
+          <div class="finder-rules">
+            <button class="btn btn-danger btn-block finder-btn" *ngFor="let step of finderSteps; let i = index" (click)="setGroupData(step, 'stepTwo')">
+            <span>{{ getLetters(step.group) }}</span>
+            </button>
           </div>
         </mat-card>
       </div>
     </div>
 </div>
-
-<!-- <div class="finder-viewer-container">
-  <div class="finder-viewer-wrapper">
-    <form
-      class="form-horizontal"
-      [formGroup]="finderForm"
-      (ngSubmit)="onSubmit(finderForm, finderForm.value)"
-    >
-      <mat-card class="finder-card">
-        <div class="finder-stack">
-          <fieldset>
-            <legend>
-              <h6>Name Finder</h6>
-            </legend>
-          </fieldset>
-        </div>
-
-        <div
-          class="finder-stack"
-          *ngIf="finderForm.get('invalidateNotify')?.value"
-        >
-          <div class="form-group">
-            <h6>Email addresse(s) (comma separated):</h6>
-            <textarea
-              class="form-control"
-              id="finderEmailField"
-              formControlName="invalidateEmailsRec"
-              autocomplete="false"
-              placeholder="Please enter email address(s)."
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="finder-stack">
-          <div class="form-group">
-            <h6>Please enter the :</h6>
-            <textarea
-              class="form-control"
-              id="finderDataField"
-              formControlName="invalidateUrls"
-              autocomplete="false"
-              placeholder="Please enter URL(s) without the host names."
-            ></textarea>
-          </div>
-        </div>
-
-        <div class="finder-stack">
-          <div class="form-group float-right">
-            <button
-              mat-raised-button
-              color="primary"
-              type="submit"
-              class="finder-btn"
-            >
-              <span mat-line>Submit</span>
-            </button>
-          </div>
-        </div>
-      </mat-card>
-    </form>
-  </div>
-</div> -->
