@@ -22,10 +22,7 @@ const ROUTES: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
-    data: {
-      bgClass: 'bg-white'
-    }
+    component: HomeComponent
   },
   {
     path: 'finder',
